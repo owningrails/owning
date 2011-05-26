@@ -8,11 +8,6 @@ gem 'rake', '0.8.7'
 
 gem 'sqlite3'
 
-# Use thin as the web server
-group :development do
-  gem 'thin'
-end
-
 # Deploy with Capistrano
 # gem 'capistrano'
 

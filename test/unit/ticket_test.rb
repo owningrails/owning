@@ -5,6 +5,7 @@ class TicketTest < ActiveSupport::TestCase
     assert_valid Ticket.create(:title => "Hello")
   end
   
+  # Make this pass
   test "custom validation" do
     assert_present Ticket.create(:title => "same", :description => "same").errors[:description]
     assert_blank Ticket.create(:title => "same", :description => "not same").errors[:description]
