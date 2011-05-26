@@ -1,7 +1,9 @@
 Owning::Application.routes.draw do
   get "home/index"
   
-  resources :tickets
+  resources :tickets do
+    resources :comments
+  end
 
   devise_for :users
 
