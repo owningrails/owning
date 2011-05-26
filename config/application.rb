@@ -42,5 +42,7 @@ module Owning
     config.generators do |g|
       g.helper false
     end
+    
+    config.middleware.swap "Rails::Rack::Logger", :InspectRequest
   end
 end
