@@ -29,3 +29,5 @@ gem 'sqlite3'
 # end
 gem "devise"
 gem "jquery-rails"
+
+gem "commentable", :path => "../commentable"
