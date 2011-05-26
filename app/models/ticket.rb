@@ -7,4 +7,18 @@ class Ticket < ActiveRecord::Base
   
   validates :status, :inclusion => %w( new opened closed )
   validates :description, :not_same => { :as => :title }
+  
+  # def self.close_all_opened_by(author)
+  #   
+  # end
+  # def self.close_all_opened
+  #   
+  # end
+  
+  scope :opened, where(:status => "opened")
+  scope :by, proc { |author| where(:author_id => author.id) }
+  
+  def self.close!
+    update_all :status => "closed"
+  end
 end
