@@ -1,3 +1,3 @@
-class NotSameValidator < ActionMode::EachValidator
+class NotSameValidator < ActiveModel::EachValidator
   # ...
 end
