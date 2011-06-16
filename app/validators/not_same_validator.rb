@@ -1,0 +1,3 @@
+class NotSameValidator < ActionMode::EachValidator
+  # ...
+end
