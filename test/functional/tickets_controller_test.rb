@@ -22,6 +22,7 @@ class TicketsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to ticket_path(assigns(:ticket))
+    assert_not_nil flash[:success]
   end
 
   test "should show ticket" do
