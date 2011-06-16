@@ -10,6 +10,16 @@
   <%= @ticket.description %>
 </p>
 
+<h2>Comments</h2>
+<div id="comments">
+  <%= render @ticket.comments %>
+</div>
+
+<h2>New Comment</h2>
+<%= form_for [@ticket, Comment.new], :remote => true do |f| %>
+  <p><%= f.text_area :body %></p>
+  <p><%= f.submit %></p>
+<% end %>
 
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', tickets_path %>
