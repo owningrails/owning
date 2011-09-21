@@ -1,0 +1,3 @@
+class NotSameValidator < ActiveModel::EachValidator
+  # ...
+end
