@@ -1,4 +1,4 @@
-<%= form_for(@ticket) do |f| %>
+<%= labelled_form_for(@ticket) do |f| %>
   <% if @ticket.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
@@ -11,10 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
+  <%= f.text_field :title %>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
