@@ -1,13 +1,23 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
-
 one:
-  title: MyString
-  description: MyText
-  user: 
-  status: MyString
+  title: A big bug
+  description: blabla
+  user: ma
+  status: opened
 
 two:
-  title: MyString
-  description: MyText
-  user: 
-  status: MyString
+  title: Another big bug
+  description: blabla
+  user: ma
+  status: opened
+
+three:
+  title: This is not working...
+  description: blabla
+  user: bob
+  status: new
+
+four:
+  title: Sky is falling
+  description: blabla
+  user: greg
+  status: closed
