@@ -5,8 +5,24 @@ module FormHelper
   end
   
   class LabellingFormBuilder < ActionView::Helpers::FormBuilder
-    def text_field(name)
-      @template.content_tag :div, label(name) + @template.tag(:br) + super, :class => "field"
+    %w( text_field text_area ).each do |type|
+      class_eval <<-RUBY
+        def #{type}(name)
+          @template.content_tag :div, label(name) + @template.tag(:br) + super, :class => "field"
+        end
+      RUBY
+    end
+    
+    def errors
+      if @object.errors.any?
+        @template.render "form/error", :object => @object
+      end
+    end
+    
+    def actions(&block)
+      content = submit
+      content << @template.capture(&block) if block
+      @template.content_tag :div, content, :class => "actions"
     end
   end
 end

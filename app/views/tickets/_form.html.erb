@@ -1,22 +1,10 @@
 <%= labelled_form_for(@ticket) do |f| %>
-  <% if @ticket.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
-
-      <ul>
-      <% @ticket.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.errors %>
 
   <%= f.text_field :title %>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.text_area :description %>
+
+  <%= f.actions do %>
+    <%= link_to "Cancel", :back %>
+  <% end %>
 <% end %>
