@@ -2,13 +2,30 @@
 <html>
 <head>
   <title>Owning</title>
+  <%= stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Droid+Sans" %>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<header>
+  <div class="content">
+    <h1>Owning Chat</h1>
+  </div>
+</header>
+
+<div id="content">
+  <div class="content">
+    <%= yield %>
+  </div>
+</div>
+
+<footer>
+  <div class="content">
+    &copy; <%= link_to raw("Marc-Andr&eacute; Cournoyer"), "http://macournoyer.com" %></a>
+  </div>
+</footer>
 
 </body>
 </html>

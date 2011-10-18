@@ -14,15 +14,13 @@ group :assets do
   gem 'sass-rails',   '~> 3.1.4'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'compass', '~> 0.12.alpha'
 end
 
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the web server
-# gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -35,4 +33,11 @@ group :test do
   gem 'minitest'
   gem 'turn', :require => false
 end
+
+group :development do
+  # Use thin as the web server
+  gem 'thin'
+  gem 'faye'
+end
+
 gem "devise"
