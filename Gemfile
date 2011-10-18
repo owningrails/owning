@@ -32,6 +32,7 @@ gem 'jquery-rails'
 
 group :test do
   # Pretty printed test output
+  gem 'minitest'
   gem 'turn', :require => false
 end
 gem "devise"
