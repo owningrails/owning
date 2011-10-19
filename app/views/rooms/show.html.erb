@@ -1,4 +1,16 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "room" %>
+  <script>
+    var room = new Room('<%= Room::FAYE_MOUNT_POINT %>', '<%= @room.channel %>', '<%=j render(Message.new) %>');
+    room.connect();
+  </script>
+<% end %>
+
 <div id="messages">
   <%= render @room.messages %>
 </div>
 
+<%= form_for [@room, Message.new], :remote => true, :html => { :autocomplete => "off" } do |f| %>
+  <%= f.text_field :body %>
+  <%= f.submit "Send" %>
+<% end %>

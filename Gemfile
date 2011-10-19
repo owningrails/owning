@@ -31,7 +31,8 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'minitest'
-  gem 'turn', :require => false
+  # gem 'turn', :require => false
+  gem 'mocha'
 end
 
 # Use thin as the web server

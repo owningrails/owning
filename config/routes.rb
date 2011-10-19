@@ -1,5 +1,7 @@
 Owning::Application.routes.draw do
-  resources :rooms
+  resources :rooms do
+    resources :messages, :only => :create
+  end
 
   devise_for :users
   

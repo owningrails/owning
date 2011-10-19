@@ -10,6 +10,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  include Mocha::API
 end
 
 class ActionController::TestCase
