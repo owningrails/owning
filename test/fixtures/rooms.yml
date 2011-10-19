@@ -1,0 +1,7 @@
+main:
+  name: Main
+  account: demo
+
+rails:
+  name: Rails
+  account: demo

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Owning</title>
+  <title><%= [@title, "Owning Chat"].compact.join(" - ") %></title>
   <%= stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Droid+Sans" %>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= yield :head %>
 </head>
 <body>
 
@@ -17,6 +18,14 @@
 
 <div id="content">
   <div class="content">
+    <% [:alert, :notice].each do |type| %>
+      <% if flash[type] %>
+        <div class="<%= type %>">
+          <%= flash[type] %>
+        </div>
+      <% end %>
+    <% end %>
+    
     <%= yield %>
   </div>
 </div>

@@ -34,10 +34,7 @@ group :test do
   gem 'turn', :require => false
 end
 
-group :development do
-  # Use thin as the web server
-  gem 'thin'
-  gem 'faye'
-end
-
+# Use thin as the web server
+gem 'thin'
+gem 'faye'
 gem "devise"

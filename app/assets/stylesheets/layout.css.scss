@@ -1,12 +1,7 @@
 @import "config";
-@import "blueprint/reset";
-@import "blueprint/scaffolding";
-
-@include blueprint;
-@include blueprint-scaffolding;
 
 header {
-  margin-top: 40px;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -17,4 +12,10 @@ header {
 section {
   clear: both;
   margin: 60px 0;
+}
+
+footer {
+  padding-top: 30px;
+  font-size: 80%;
+  text-align: center;
 }
