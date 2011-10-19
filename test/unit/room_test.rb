@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class RoomTest < ActiveSupport::TestCase
-  def test_publish
+  test "publish" do
     room = Room.first
     
     # Setup expectations

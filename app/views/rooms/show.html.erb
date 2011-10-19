@@ -1,7 +1,9 @@
 <% content_for :head do %>
   <%= javascript_include_tag "room" %>
   <script>
-    var room = new Room('<%= Room::FAYE_MOUNT_POINT %>', '<%= @room.channel %>', '<%=j render(Message.new) %>');
+    var room = new Room('<%= @room.faye_url(request.host_with_port) %>',
+                        '<%= @room.channel %>',
+                        '<%=j render(Message.new) %>');
     room.connect();
   </script>
 <% end %>
