@@ -1,0 +1,7 @@
+<div class="room">
+  <h2><%= link_to room.name, room %></h2>
+  <p>
+    <%= link_to 'Edit', edit_room_path(room) %>
+    <%= link_to 'Destroy', room, confirm: 'Are you sure?', method: :delete %>
+  </p>
+</div>

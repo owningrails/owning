@@ -27,7 +27,4 @@ Owning::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  
-  # Configure Faye to start along the Rails app in dev mode
-  config.middleware.use Faye::RackAdapter, :mount => '/faye', :timeout => 25
 end

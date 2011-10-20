@@ -1,7 +1,8 @@
-<% @title = "#{current_account.name} Rooms" %>
+<h1>Listing rooms</h1>
 
-<ul>
-<% @rooms.each do |room| %>
-  <li><%= link_to room.name, room %></li>
-<% end %>
-</ul>
+<div class="actions">
+  <%= link_to 'New Room', new_room_path %>
+</div>
+
+<%= render @rooms %>
+

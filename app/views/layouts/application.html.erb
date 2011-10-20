@@ -8,11 +8,30 @@
   <%= csrf_meta_tags %>
   <%= yield :head %>
 </head>
-<body>
+<body id="<%= controller.controller_name %>" class="<%= controller.action_name %>">
 
 <header>
   <div class="content">
     <h1>Owning Chat</h1>
+    
+    <nav id="menu">
+      <%= link_to "Rooms", rooms_path %>
+      <%= link_to "New Room", new_room_path %>
+    </nav>
+    
+    <nav id="utilities">
+      <% if user_signed_in? %>
+        <span class="greeting">Hi <%= current_user.name %>,</span>
+        <%= link_to 'Edit your profile', edit_user_registration_path %>
+      <% else %>
+        <%= link_to 'Register', new_user_registration_path %>
+      <% end %>
+      <% if user_signed_in? %>
+        <%= link_to 'Logout', destroy_user_session_path %>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path %>
+      <% end %>
+    </nav>
   </div>
 </header>
 
@@ -32,7 +51,8 @@
 
 <footer>
   <div class="content">
-    &copy; <%= link_to raw("Marc-Andr&eacute; Cournoyer"), "http://macournoyer.com" %></a>
+    &copy; <%= link_to raw("Marc-Andr&eacute; Cournoyer"), "http://macournoyer.com" %>.
+    This app is part of the <%= link_to "Owning Rails Masterclass", "http://owningrails.com" %>.
   </div>
 </footer>
 
