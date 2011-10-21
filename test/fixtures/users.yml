@@ -1,9 +1,7 @@
 dex:
   name: dex
-  email: dex@example.com
   account: demo
 
 deb:
   name: deb
-  email: deb@example.com
   account: demo

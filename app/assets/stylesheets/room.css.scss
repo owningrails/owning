@@ -9,7 +9,7 @@ header {
 
 #messages {
   @include column(24, true);
-  padding-bottom: 40px;
+  padding: 40px 0;
 }
 
 #new_message {
