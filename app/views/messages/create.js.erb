@@ -1,6 +1,12 @@
+/*
 <% if @message.errors.any? %>
   alert("<%= @message.errors.full_messages.to_sentence %>");
 <% else %>
   //$("#messages").append('<%=j render(@message) %>');
+  $("#new_message")[0].reset();
+<% end %>
+*/
+
+<%= catch_errors_on @message do %>
   $("#new_message")[0].reset();
 <% end %>
