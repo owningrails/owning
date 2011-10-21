@@ -15,7 +15,7 @@ class RoomsController < ApplicationController
   end
   
   def new
-    @room = Room.new
+    @room = rooms.build
     
     respond_with @room
   end
@@ -25,7 +25,7 @@ class RoomsController < ApplicationController
   end
   
   def create
-    @room = Room.create(params[:room])
+    @room = rooms.create(params[:room])
 
     respond_with @room
   end

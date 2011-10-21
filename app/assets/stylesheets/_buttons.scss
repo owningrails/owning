@@ -1,0 +1,32 @@
+@mixin button {
+  cursor: pointer;
+
+  margin: 0;
+  padding: 6px 10px;
+
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: 0 0 2px #000;
+  
+  white-space: nowrap;
+
+  border: 1px solid #666;
+  @include border-radius(5px);
+
+  color: #fff;
+  @include background(linear-gradient(#999, #999 * 0.7));
+  
+  &[type="submit"] {
+    @include background(linear-gradient(#0080FF, #0080FF * 0.7));
+  }
+  
+  &[data-method="delete"] {
+    @include background(linear-gradient(#900, #900 * 0.7));
+  }
+  
+  &:hover {
+    text-decoration: none;
+    @include opacity(0.9);
+  }
+}

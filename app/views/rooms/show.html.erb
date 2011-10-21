@@ -1,10 +1,13 @@
 <% content_for :head do %>
+  <%= stylesheet_link_tag "room" %>
   <%= javascript_include_tag "room" %>
   <script>
     var room = new Room('<%= @room.faye_url(request.host_with_port) %>',
                         '<%= @room.channel %>',
                         '<%=j render(Message.new) %>');
-    room.connect();
+    $(function() {
+      room.connect();
+    });
   </script>
 <% end %>
 
@@ -13,6 +16,6 @@
 </div>
 
 <%= form_for [@room, Message.new], :remote => true, :html => { :autocomplete => "off" } do |f| %>
-  <%= f.text_field :body %>
+  <%= f.text_field :body, :autofocus => true %>
   <%= f.submit "Send" %>
 <% end %>

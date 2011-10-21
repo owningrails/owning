@@ -9,10 +9,15 @@ class this.Room
     
     @subscription = client.subscribe @roomChannel, (message) ->
       # This is called when a message is received
-      $(messageTemplate).
+      messageElement = $(messageTemplate)
+      # Fill in values
+      messageElement.
         find(".author").text(message.author).end().
-        find(".body").text(message.body).end().
-        appendTo("#messages")
+        find(".body").text(message.body).end();
+      # Add to chat log
+      messageElement.appendTo("#messages")
+      # Scroll top the bottom to show last message
+      $('html,body').animate scrollTop: messageElement.offset().top, 400
     
     @subscription.errback (error) ->
       alert error.message

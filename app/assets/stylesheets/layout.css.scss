@@ -1,19 +1,28 @@
 @import "config";
+@import "buttons";
 
 header {
-  background: #cce;
-  border-bottom: solid 1px #999;
+  background: #fff image-url("header.png") center repeat-x;
+  border-bottom: solid 1px #333;
+  height: 65px;
+  color: #ccc;
   
   h1 {
     @include column(7);
     
+    background: image-url("logo.png") no-repeat;
+    height: 65px;
+    text-indent: -9999px;
+    padding: 0;
+    border: 0;
   }
   
   nav {
-    padding: 1.5em 0;
+    padding: 1.6em 0;
     
     a {
-      padding: 1.5em 1em;
+      padding: 1.6em 1em;
+      @include link-colors(#eef, #fff, #fff, #eef, #fff);
     }
   }
   
@@ -21,9 +30,9 @@ header {
     @include column(11, true);
     
     a {
+      font-weight: bold;
       text-transform: uppercase;
       text-decoration: none;
-      letter-spacing: .1em;
     }
   }
   
@@ -55,4 +64,46 @@ footer {
 
 #content {
   padding: 30px 0;
+}
+
+.room {
+  float: left;
+  width: span(4);
+  background-color: #eee;
+  
+  border: solid 1px #ccc;
+  @include border-radius(3px);
+  @include box-shadow(#ccc 1px 1px 1px);
+  
+  padding: 6px 20px;
+  margin: 3px 15px 3px 0;
+  
+  h2 {
+    background: #ddd;
+    margin: -6px -20px 6px;
+    padding: 6px 20px;
+    border-bottom: solid 1px #ccc;
+    font-weight: bold;
+    
+    a {
+      text-decoration: none;
+    }
+  }
+  
+  p {
+    padding-top: 1em;
+    
+    a {
+      @include button;
+    }
+  }
+}
+
+.actions {
+  clear: both;
+  padding: 20px 0;
+  
+  a {
+    @include button;
+  }
 }

@@ -1,0 +1,22 @@
+@import "config";
+@import "buttons";
+
+h1 {
+  font-size: 160%;
+  padding-bottom: 0.5em;
+  border-bottom: solid 1px #ccc;
+}
+
+h2 {
+  font-size: 140%;
+}
+
+h3 {
+  font-size: 110%;
+  font-weight: bold;
+  margin: 1.5em 0 1em 0;
+}
+
+a.button, button, input[type="submit"] {
+  @include button;
+}

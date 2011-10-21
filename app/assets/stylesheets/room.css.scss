@@ -1,0 +1,48 @@
+@import "config";
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#messages {
+  @include column(24, true);
+  padding-bottom: 40px;
+}
+
+#new_message {
+  background: #fff;
+  
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  
+  padding: 20px 0;
+  
+  input[type="text"] {
+    width: span(20);
+    padding: 6px;
+  }
+}
+
+.message {
+  @include column(24, true);
+  padding: 10px 0;
+  border-bottom: dotted 1px #ccc;
+  
+  .author {
+    @include column(2);
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  .body {
+    @include column(22, true);
+  }
+}
+
+footer {
+  display: none;
+}
