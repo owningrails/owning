@@ -1,5 +1,5 @@
 <div class="room">
-  <h2><%= room.name %> <%= link_to "Join", room, :class => "button" %></h2>
+  <h2><%= room.name %> <%= link_to "Join", room %></h2>
   <% room.messages.last.try :tap do |message| %>
     <blockquote>
       <%= message.user.name %>: <%= message.body %>

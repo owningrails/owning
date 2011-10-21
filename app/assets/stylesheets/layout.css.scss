@@ -82,12 +82,12 @@ footer {
 
 .room {
   float: left;
-  width: span(4);
+  width: span(6);
   background-color: #eee;
   
   border: solid 1px #ccc;
   @include border-radius(3px);
-  @include box-shadow(#ddd 3px 3px 3px);
+  @include box-shadow(#ddd 1px 1px 1px);
   
   padding: 6px 20px;
   margin: 3px 15px 3px 0;
@@ -100,6 +100,7 @@ footer {
     font-weight: bold;
     
     a {
+      @include button;
       float: right;
     }
   }

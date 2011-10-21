@@ -9,8 +9,9 @@ class this.Room
     
     @subscription = client.subscribe @roomChannel, (message) ->
       # This is called when a message is received
+      # Converts the html template into an element
       messageElement = $(messageTemplate)
-      # Fill in values
+      # Fill in values in the template
       messageElement.
         find(".author").text(message.author).end().
         find(".body").text(message.body).end();
