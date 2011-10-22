@@ -11,5 +11,7 @@ class MessagesController < ApplicationController
     if @message.save
       @room.publish request.host_with_port, @message.to_publishable
     end
+    
+    respond_with @message
   end
 end
