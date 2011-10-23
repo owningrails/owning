@@ -5,7 +5,7 @@ class RoomsController < ApplicationController
   respond_to :html, :json
   
   def index
-    @rooms = rooms
+    @rooms = current_rooms
     
     respond_with @rooms
   end
@@ -15,7 +15,7 @@ class RoomsController < ApplicationController
   end
   
   def new
-    @room = rooms.build
+    @room = current_rooms.build
     
     respond_with @room
   end
@@ -25,7 +25,7 @@ class RoomsController < ApplicationController
   end
   
   def create
-    @room = rooms.create(params[:room])
+    @room = current_rooms.create(params[:room])
 
     respond_with @room
   end
@@ -43,11 +43,7 @@ class RoomsController < ApplicationController
   end
   
   private
-    def rooms
-      current_user.account.rooms
-    end
-    
     def find_room
-      @room = rooms.find(params[:id])
+      @room = current_rooms.find(params[:id])
     end
 end

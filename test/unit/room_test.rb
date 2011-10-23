@@ -10,6 +10,6 @@ class RoomTest < ActiveSupport::TestCase
     end
     Faye::Client.expects(:new).with("http://host/faye").returns(client)
     
-    room.publish("host", "data")
+    room.publish("host", mock(:to_publishable => "data"))
   end
 end

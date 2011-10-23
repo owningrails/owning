@@ -7,4 +7,9 @@ class ApplicationController < ActionController::Base
       current_user.try(:account)
     end
     helper_method :current_account
+    
+    def current_rooms
+      current_account.try(:rooms)
+    end
+    helper_method :current_rooms
 end

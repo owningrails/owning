@@ -4,6 +4,8 @@ class Message < ActiveRecord::Base
   
   validates :body, :presence => true
   
+  attr_accessible :body
+  
   def to_publishable
     { :author => user.name, :body => body }
   end

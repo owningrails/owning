@@ -4,6 +4,8 @@ class Room < ActiveRecord::Base
   
   validates :name, :presence => true
   
+  attr_accessible :name
+  
   def faye_url(host)
     "http://#{host}/faye"
   end
@@ -12,8 +14,8 @@ class Room < ActiveRecord::Base
     "/rooms/#{id}"
   end
   
-  def publish(host, data)
+  def publish(host, object)
     client = Faye::Client.new(faye_url(host))
-    client.publish(channel, data)
+    client.publish(channel, object.to_publishable)
   end
 end

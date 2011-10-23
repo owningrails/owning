@@ -2,7 +2,8 @@ require 'test_helper'
 
 class MessageTest < ActiveSupport::TestCase
   test "to_publishable" do
-    assert_equal({ :author => "dex", :body => "holla" },
-                 Message.new(:user => users(:dex), :body => "holla").to_publishable)
+    message = Message.new(:body => "holla")
+    message.user = users(:dex)
+    assert_equal({ :author => "dex", :body => "holla" }, message.to_publishable)
   end
 end
