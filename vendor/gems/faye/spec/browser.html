@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Faye test suite</title>
+    <script type="text/javascript" src="../vendor/js.class/build/min/loader.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      
+      if (typeof TestSwarm === 'undefined')
+        TestSwarm = {
+          submit: function(result) {
+            if (window.console) console.log(Faye.toJSON(result));
+          },
+          heartbeat: function() {}
+        }
+      
+      JS.Packages(function() { with(this) {
+        file('../build/faye-browser-min.js').provides('Faye')
+        autoload(/.*Spec/, {from: './javascript'})
+      }})
+
+      JS.require('Faye', 'JS.Test', 'JS.Range', function() {
+        JS.Test.Unit.Assertions.include({
+          assertYield: function(expected) {
+            var testcase = this
+            return function(actual) { testcase.assertEqual(expected, actual) }
+          }
+        })
+        
+        JS.require( 'FayeSpec',
+                    'GrammarSpec',
+                    'ChannelSpec',
+                    'ClientSpec',
+                    'TransportSpec',
+                    JS.Test.method('autorun'))
+      })
+      
+    </script>
+  </body>
+</html>
+

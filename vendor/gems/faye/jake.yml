@@ -1,0 +1,57 @@
+---
+source_directory:   javascript
+build_directory:    build
+
+builds:
+  src:
+    packer:         false
+    suffix:         false
+  min:
+    shrink_vars:    true
+    private:        true
+
+packages:
+
+  core:
+    - faye
+    - util/class
+    - util/namespace
+    - error
+    - mixins/deferrable
+    - mixins/publisher
+    - mixins/timeouts
+    - mixins/logging
+    - protocol/grammar
+    - protocol/extensible
+    - protocol/channel
+    - protocol/subscription
+    - protocol/client
+    - transport/transport
+
+  faye-node:
+    extends: core
+    files:
+      - util/set
+      - util/node/web_socket
+      - util/node/web_socket/draft75_parser
+      - util/node/web_socket/draft76_parser
+      - util/node/web_socket/protocol8_parser
+      - engines/base
+      - engines/connection
+      - engines/memory
+      - engines/redis
+      - protocol/server
+      - transport/node_local
+      - transport/node_http
+      - adapters/node_adapter
+
+  faye-browser:
+    extends: core
+    files:
+      - util/browser/event
+      - util/browser/uri
+      - util/browser/json
+      - transport/web_socket
+      - transport/xhr
+      - transport/cors
+      - transport/jsonp
