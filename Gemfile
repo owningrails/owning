@@ -35,7 +35,8 @@ group :test do
   gem 'mocha'
 end
 
-# Use thin as the web server
+gem "rake", "0.8.7"
+gem 'eventmachine', '~> 1.0.0.beta.4.1', :platforms => :mingw # Latest version known to work on Windows.
 gem 'thin'
-gem 'faye'
+gem 'faye', :path => "vendor/gems/faye" # My special version w/ dep fixes for Windows.
 gem "devise"
