@@ -35,7 +35,7 @@ group :test do
   gem 'mocha'
 end
 
-gem "rake", "0.8.7"
+gem "rake", "0.8.7", :platforms => :mingw
 gem 'eventmachine', '~> 1.0.0.beta.4.1', :platforms => :mingw # Latest version known to work on Windows.
 gem 'thin'
 gem 'faye', :path => "vendor/gems/faye" # My special version w/ dep fixes for Windows.
