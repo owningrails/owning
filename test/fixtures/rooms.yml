@@ -5,3 +5,7 @@ main:
 rails:
   name: Rails
   account: demo
+
+one:
+  name: One
+  account: demo
