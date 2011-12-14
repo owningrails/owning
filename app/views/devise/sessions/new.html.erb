@@ -1,5 +1,13 @@
 <h2>Sign in</h2>
 
+<div class="box">
+  <h3>Login with ...</h3>
+  <ul>
+    <li><strong>name:</strong> dex, <strong>password:</strong> test123</li>
+    <li><strong>name:</strong> deb, <strong>password:</strong> test123</li>
+  </ul>
+</div>
+
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :name %><br />
   <%= f.text_field :name %></div>
