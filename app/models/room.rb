@@ -4,8 +4,6 @@ class Room < ActiveRecord::Base
   
   validates :name, :presence => true
   
-  attr_accessible :name
-  
   def faye_url(host)
     "http://#{host}/faye"
   end
