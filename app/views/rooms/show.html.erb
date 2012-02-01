@@ -1,0 +1,8 @@
+<div id="messages">
+  <%= render @room.messages %>
+</div>
+
+<%= form_for [@room, Message.new], :remote => true, :html => { :autocomplete => "off" } do |f| %>
+  <%= f.text_field :body, :autofocus => true %>
+  <%= f.submit "Send" %>
+<% end %>
