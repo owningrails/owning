@@ -1,3 +1,16 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "room" %>
+  <%= javascript_include_tag "room" %>
+  <script>
+    var room = new Room('<%= @room.faye_url(request.host_with_port) %>',
+                        '<%= @room.channel %>',
+                        '<%=j render(Message.new) %>');
+    $(function() {
+      room.connect();
+    });
+  </script>
+<% end %>
+
 <div id="messages">
   <%= render @room.messages %>
 </div>
