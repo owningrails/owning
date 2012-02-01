@@ -1,7 +1,2 @@
-<% if @message.errors.any? %>
-  <%# Exercise: refactor this into a responder. %>
-  alert("<%= @message.errors.full_messages.to_sentence %>");
-<% else %>
-  $("#messages").append("<%=j render(@message) %>");
-  $("form#new_message")[0].reset();
-<% end %>
+$("#messages").append("<%=j render(@message) %>");
+$("form#new_message")[0].reset();
