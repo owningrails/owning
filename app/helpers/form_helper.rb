@@ -12,5 +12,21 @@ module FormHelper
     #   @template.content_tag(...) # instead of content_tag(...)
     #   @template.render(...) # instead of render(...)
     #
+    
+    %w( text_field text_area ).each do |type|
+      class_eval <<-RUBY
+        def #{type}(name)
+          @template.content_tag :div,
+            label(name) + @template.tag(:br) + super,
+            :class => "field"
+        end
+      RUBY
+    end
+    
+    def errors
+      if @object.errors.any?
+        @template.render "form/errors", :object => @object
+      end
+    end
   end
 end
