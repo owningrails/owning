@@ -29,3 +29,7 @@ gem 'eventmachine', '~> 1.0.0.beta.4.1', :platforms => :mingw # Latest version k
 gem 'thin'
 gem 'faye', :path => "vendor/gems/faye" # My special version w/ dep fixes for Windows.
 gem "devise"
+
+group :tools do
+  gem 'guard-test'
+end
