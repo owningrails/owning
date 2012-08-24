@@ -3,5 +3,5 @@ class Account < ActiveRecord::Base
   has_many :rooms
   
   validates :name, :presence => true,
-                   :format => /\A[A-Z]/ ### Exercise: turn into this: `:capitalized => true`
+                   :capitalized => { :message => "oops" }
 end
