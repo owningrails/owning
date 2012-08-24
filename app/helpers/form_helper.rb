@@ -12,5 +12,27 @@ module FormHelper
     #   @template.content_tag(...) # instead of content_tag(...)
     #   @template.render(...) # instead of render(...)
     #
+    
+    def text_field(name)
+      @template.content_tag :div, :class => "field" do
+        label(name) + @template.tag(:br) + super
+      end
+    end
+    
+    def errors
+      if @object.errors.any?
+        @template.render "forms/errors", :object => @object
+      end
+    end
+    
+    def actions(&block)
+      content = submit
+      if block
+        content << @template.capture(&block)
+      end
+      @template.content_tag :div, :class => "actions" do
+        content
+      end
+    end
   end
 end
